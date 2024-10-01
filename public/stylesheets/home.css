@@ -1,0 +1,113 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Main Styles */
+.images {
+    height: 200px; /* Set a fixed height for images */
+    width: 100%;
+    object-fit: contain; /* Ensures images maintain aspect ratio */
+}
+
+.card {
+    border: 2px solid black;
+    flex-basis: 18%; /* Allows 5 products in a row on large screens */
+    margin: 1vw;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 1%;
+}
+
+.productName {
+    font-size: 1rem;
+    font-family: 'Times New Roman', Times, serif;
+    margin-left: 4%;
+}
+
+.productPrice {
+    font-size: 0.9rem;
+    font-family: 'Times New Roman', Times, serif;
+    margin-left: 4%;
+}
+
+.CardButton {
+    width: 100%;
+    display: flex; 
+    justify-content: space-around;
+    margin-bottom: 1%;
+    margin-top: 1%;
+}
+
+.addToCart, .desc {
+    border: none;
+    height: 4vh;
+}
+
+.addToCart {
+    width: 100%;
+    background-color: rgb(66, 224, 126);
+}
+
+.desc {
+    width: 100%;
+}
+
+/* Show more button style */
+#showmore {
+    width: 50%;
+    height: 4vh;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: none;
+    background-color: darkcyan;
+    color: white;
+    display: block;
+}
+
+/* Media Queries */
+
+/* Large screens (desktops) */
+@media (min-width: 1200px) {
+    .card {
+        flex-basis: 18%; /* Show 5 cards per row */
+    }
+}
+
+/* Medium screens (tablets) */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .card {
+        flex-basis: 23%; /* Show 4 cards per row */
+    }
+}
+
+/* Tablets and smaller laptops */
+@media (min-width: 768px) and (max-width: 991px) {
+    .card {
+        flex-basis: 30%; /* Show 3 cards per row */
+    }
+}
+
+/* Small screens (mobile phones) */
+@media (max-width: 767px) {
+    .card {
+        flex-basis: 45%; /* Show 2 cards per row */
+    }
+}
+
+/* Extra small screens (small mobile phones) */
+@media (max-width: 480px) {
+    .card {
+        flex-basis: 100%; /* Show 1 card per row */
+    }
+}

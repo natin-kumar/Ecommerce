@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/profile.css">
+    <link rel="stylesheet" href="/stylesheets/profile.css">
+    <link rel="stylesheet" href="../stylesheets/navbar.css">
+</head>
+<body>
+    <%-include('navbar')%>
+    <div class="container mt-4">
+        <header class="mb-4">
+            <h1 class="text-center">User Profile</h1>
+        </header>
+
+        <section class="profile-details mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title">Welcome, <%= user.name %>!</h2>
+                    <p class="card-text"><strong>Email:</strong> <%= user.email %></p>
+                    <p class="card-text"><strong>Username:</strong> <%= user.name %></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="user-actions text-center mb-5">
+            <a href="/orders" class="btn btn-secondary mb-5">View Orders</a>
+        </section>
+    </div>
+    <%-include('footer')%>
+    <script src="/javascripts/navbar.js"></script>
+    <script src="/javascripts/profile.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

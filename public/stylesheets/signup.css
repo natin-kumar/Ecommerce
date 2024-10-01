@@ -1,0 +1,133 @@
+.mainContainer {
+  background-color: #f7f7f7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  padding: 20px; /* Add padding to allow some space on smaller screens */
+}
+
+.signup-container {
+  /* display: flex; */
+  background-color: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  max-width: 900px;
+  width: 100%;
+  margin: auto; /* Center the container */
+}
+
+.signup-image {
+  width: 50%;
+  background: url('https://source.unsplash.com/800x1200/?shoes,fashion') no-repeat center center;
+  background-size: cover;
+  position: relative;
+}
+
+.signup-image-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.signup-form {
+  width: 50%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto; /* Center the form within its container */
+}
+
+.signup-form h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.form-control {
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+}
+
+.btn-custom {
+  background-color: #ff6f61;
+  color: white;
+  border-radius: 10px;
+  padding: 0.75rem;
+  width: 100%;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  font-size: 1rem;
+}
+
+.btn-custom:hover {
+  background-color: #ff4b3a;
+  box-shadow: 0px 4px 15px rgba(255, 75, 58, 0.5);
+}
+
+.signin-link {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.signin-link a {
+  color: #ff6f61;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.signin-link a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .signup-container {
+    flex-direction: column;
+  }
+
+  .signup-image,
+  .signup-form {
+    width: 100%;
+  }
+
+  .signup-image {
+    height: 200px;
+  }
+
+  .signup-form {
+    padding: 1.5rem; /* Reduce padding on smaller screens */
+  }
+}
+
+#passwordContainer {
+  position: relative;
+}
+
+
+
+#togglePassword {
+  position: absolute;
+  top: 58%;
+  left: 60%;
+  cursor: pointer;
+}
+#togglePasswordconfirm {
+  position: absolute;
+  top: 66%;
+  left: 60%;
+  cursor: pointer;
+}
+.response{
+display: none;
+}

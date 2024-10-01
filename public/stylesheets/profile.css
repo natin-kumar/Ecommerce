@@ -1,0 +1,13 @@
+.profile-details .card {
+    border: 1px solid #ddd;
+}
+
+.profile-details .card-title {
+    color: #333;
+}
+
+.user-actions .btn-secondary {
+    background-color: #007bff;
+    color: #fff;
+}
+

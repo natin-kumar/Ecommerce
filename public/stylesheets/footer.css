@@ -1,0 +1,41 @@
+/* Footer Styling */
+.footer {
+    background-color: #343a40; /* Dark background */
+    color: white; /* White text */
+    padding: 2% 0; /* Added padding to give the footer some space */
+    height: 50px; /* Adjust this value to set the desired minimum height */
+    /* Alternatively, you can use height: 100px; if you want a fixed height */
+}
+
+.footer a {
+    color: white; /* White links */
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: #f8f9fa; /* Light hover effect */
+}
+
+.footer .fa {
+    margin-right: 10px;
+}
+
+.footer ul {
+    padding-left: 0;
+    list-style-type: none;
+}
+
+.footer hr {
+    /* margin-top: 20px; */
+    /* margin-bottom: 10px; */
+    border-color: white;
+}
+
+.footer .list-inline-item {
+    margin-right: 10px;
+}
+
+.footer .list-inline-item a {
+    color: white;
+    font-size: 20px;
+}

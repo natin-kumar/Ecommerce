@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/adminProfile.css">
+</head>
+<body>
+    <%- include('navbar') %>
+    <h1 class="text-center my-4">Admin Profile</h1>
+    <div class="container">
+        <div class="admin-info card bg-light mb-4">
+            <div class="card-body">
+                <h2 class="card-title"><%= admin.name %></h2>
+                <p class="card-text"><strong>Email:</strong> <%= admin.email %></p>
+                <p class="card-text" id="len"><strong>Total Products:</strong> <%= admin.products.length %></p>
+            </div>
+        </div>
+
+        <% if (admin!=null) { %>
+            <div class="row">
+                <div class="text-center mt-4">
+                    <a href="/admin/add-product" class="btn btn-success">Add Product</a>
+                </div>
+                <% admin.products.forEach(product => { %>
+                <div class="col-md-4 mb-4">
+                    <div class="card product-card">
+                        <img src="<%= product.productId.img %>" class="card-img-top" alt="Product Image">
+                        <div class="card-body">
+                            <div class="mb-2">
+                                <label for="productName_<%= product.productId._id %>">Name:</label>
+                                <input type="text" id="productName_<%= product.productId._id %>" class="form-control" value="<%= product.productId.name %>" readonly>
+                            </div>
+                            <div class="mb-2">
+                                <label for="productPrice_<%= product.productId._id %>">Price:</label>
+                                <input type="text" id="productPrice_<%= product.productId._id %>" class="form-control" value="$<%= product.productId.price %>" readonly>
+                            </div>
+                            <div class="mb-2">
+                                <label for="productNumber_<%= product.productId._id %>">Product Number:</label>
+                                <input type="text" id="productNumber_<%= product.productId._id %>" class="form-control" value="<%= product.productId.productNumber %>" readonly>
+                            </div>
+                            <div class="mb-2">
+                                <label for="productSize_<%= product.productId._id %>">Size:</label>
+                                <input type="text" id="productSize_<%= product.productId._id %>" class="form-control" value="<%= product.productId.size %>" readonly>
+                            </div>
+                            <div class="mb-2">
+                                <label for="productColor_<%= product.productId._id %>">Color:</label>
+                                <input type="text" id="productColor_<%= product.productId._id %>" class="form-control" value="<%= product.productId.color %>" readonly>
+                            </div>
+                            <div class="mb-2">
+                                <label for="productQuantity_<%= product.productId._id %>">Quantity:</label>
+                                <input type="text" id="productQuantity_<%= product.productId._id %>" class="form-control" value="<%= product.productId.quantity %>" readonly>
+                            </div>
+                            <div class="d-flex justify-content-between mt-3">
+                                <button name="edit" class="edit btn btn-primary" id="<%=product.productId._id%>">Edit</button>
+                                <button name="update" class="update btn btn-success" id="<%=product.productId._id%>">Update</button>
+                                <button name="del" class="del btn btn-danger" id="<%=product.productId._id%>">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <% }) %>
+            </div>
+        <% } else { %>
+            <div class="alert alert-warning text-center">Your Product list is empty.</div>
+        <% } %>
+    </div>
+    <%-include('footer')%>
+    <script src="/javascripts/adminProfile.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

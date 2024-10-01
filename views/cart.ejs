@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <%- include('navbar') %>
+    <div class="container my-5">
+        <h1 class="mb-4">Shopping Cart</h1>
+        <% if (message) { %>
+            <div class="alert alert-warning text-center">
+                <%= message %>
+            </div>
+        <% } else if (cartItems.length > 0) { %>
+            <div class="row">
+                <div class="col-md-8">
+                    <table class="table table-bordered align-middle">
+                        <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>Description</th>
+                                <th>Quantity</th>
+                                <th>Price</th>
+                                <th>Total</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <%if(!disable){%>
+                            <% cartItems.forEach((item) => { %>
+                                <tr id="<%= item._id %>">
+                                    <td>
+                                        <img src="<%= item.productId.img %>" alt="<%= item.productId.name %>" class="img-fluid" style="max-width: 100px;">
+                                        <p><strong><%= item.productId.name %></strong></p>
+                                    </td>
+                                    <td>
+                                        <b>Color:</b> <%= item.productId.color %><br>
+                                        <b>Size:</b> <%= item.productId.size %><br>
+                                        <b>Product Number:</b> <%= item.productId.productNumber %>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-outline-secondary btn-sm me-0" onclick="quantity(this, 0)">-</button>
+                                        <input type="number" name="quantity" class="qty form-control text-center d-inline-block" value="<%= item.quantity %>" style="width: 60px;" min="1" readonly>
+                                        <button type="button" class="btn btn-outline-secondary btn-sm ms-0" onclick="quantity(this, 1)">+</button>
+                                    </td>
+                                    <td class="itemprice">$<%= item.productId.price.toFixed(2) %></td>
+                                    <td class="itemTotal">$<%= (item.productId.price * item.quantity).toFixed(2) %></td>
+                                    <td>
+                                        <button class="remove btn btn-sm btn-danger" type="button">Remove</button>
+                                    </td>
+                                </tr>
+                            <% })}; %>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4>Cart Summary</h4>
+                            <p class="cartItems">Total Items: <%= cartItems.length %></p>
+                            <p class="totalPrice">Total Price: $<%= cartItems.reduce((acc, item) => acc + (item.productId.price) * item.quantity, 0).toFixed(2) %></p>
+                            <a href="/checkout" class="btn btn-success w-100">Proceed to Checkout</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <% } else { %>
+            <div class="alert alert-warning text-center">Your cart is empty.</div>
+        <% } %>
+    </div>
+    <%-include('footer')%>
+
+    <script src="/javascripts/cart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

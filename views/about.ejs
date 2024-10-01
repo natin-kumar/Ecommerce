@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>About Us - Shoezzy</title>
+        
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+      .hero {
+          background-image: url('/images/aboutBackground.webp');
+          background-size:cover;
+          background-position: center;
+          height: 60vh;
+          background-repeat: no-repeat;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: white;
+        }
+        
+        .hero h1 {
+            font-size: 4rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+        
+        .about-content {
+            margin-top: 50px;
+        }
+        
+        .history-section img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        
+        .team-member {
+            margin-bottom: 30px;
+        }
+        
+        .team-member img {
+            border-radius: 50%;
+        }
+        </style>
+</head>
+<body>
+    
+    <%-include('navbar')%>
+    <section class="hero text-center">
+        <div class="container">
+            <h1>About Us</h1>
+            <p class="lead text-dark">Discover the story behind the shoes that move you.</p>
+        </div>
+    </section>
+    
+    <section class="about-content container py-5">
+    <div class="row">
+      <div class="col-md-6">
+          <h2>Our Story</h2>
+        <p>
+          Welcome to Shoezzy, where style meets comfort. Founded in 2020, we have grown into one of the leading shoe brands in the country. Our shoes are designed to meet the needs of both athletes and casual wearers, blending technology, craftsmanship, and sustainable materials.
+        </p>
+        <p>
+          We believe in providing not just footwear, but a lifestyle. Our products are created with a passion for innovation, quality, and comfort. Every step you take in our shoes is a step towards excellence.
+        </p>
+      </div>
+      <div class="col-md-6">
+        <img src="/images/shoe.webp" alt="Shoe History" class="img-fluid">
+      </div>
+    </div>
+  </section>
+
+  <section class="history-section bg-light py-5">
+    <div class="container">
+      <h2 class="text-center">A Journey of Innovation</h2>
+      <p class="text-center mb-5">
+        Since our inception, we have continuously pushed the boundaries of innovation in footwear design. From our first product line to our latest collection, we are committed to excellence.
+      </p>
+
+      <div class="row">
+        <div class="col-md-4">
+          <h4>2020</h4>
+          <p>We launched our first line of running shoes, designed to provide maximum comfort and durability.</p>
+        </div>
+        <div class="col-md-4">
+          <h4>2022</h4>
+          <p>Introduced eco-friendly materials in our production process, reducing our carbon footprint.</p>
+        </div>
+        <div class="col-md-4">
+          <h4>2023</h4>
+          <p>Expanded globally with stores opening in major cities worldwide.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="team-section container py-5">
+    <h2 class="text-center mb-5">Meet the Team</h2>
+    
+    <div class="row">
+      <div class="col-md-4 text-center team-member">
+        <h4>John Doe</h4>
+        <p>CEO & Founder</p>
+      </div>
+      <div class="col-md-4 text-center team-member">
+        <h4>Jane Smith</h4>
+        <p>Head Designer</p>
+      </div>
+      <div class="col-md-4 text-center team-member">
+        <h4>Mike Johnson</h4>
+        <p>Marketing Director</p>
+      </div>
+    </div>
+  </section>
+
+  <%-include('footer')%>
+
+  <script src="/javascripts/navbar.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
