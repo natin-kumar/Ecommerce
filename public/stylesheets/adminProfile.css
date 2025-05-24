@@ -1,0 +1,54 @@
+.product-card {
+    transition: transform 0.2s, box-shadow 0.2s;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+.card-img-top {
+    border-bottom: 1px solid #e0e0e0;
+    height: 200px;
+    object-fit: cover;
+}
+.card-body {
+    padding: 20px;
+}
+.card-body .form-control {
+    background-color: #f8f9fa;
+    border: none;
+    font-weight: bold;
+}
+.card-body .form-control:focus {
+    background-color: #fff;
+    border: 1px solid #ced4da;
+}
+.btn {
+    font-size: 0.9rem;
+    margin: 0; 
+}
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+.btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+.edit {
+    position: relative;
+    z-index: 1;
+}
+.update {
+    position: relative;
+    z-index: 0;
+    display: none; 
+    margin-left: auto;
+    margin-right: auto;
+    /* display: block;  */
+}
+.update + .edit {
+    margin-left: 10px; 
+}

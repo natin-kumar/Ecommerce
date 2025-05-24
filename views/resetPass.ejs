@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reset Password</title>
+    
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/reset.css">
+    <style>
+       
+    </style>
+</head>
+<body>
+    <%-include('navbar')%>
+<div class="mainContainer">
+    <div class="reset-password-container text-center">
+        <h2>Reset Your Password</h2>
+        <p>Please enter a new password.</p>
+            <div class="form-group">
+                <label for="new-password">New Password</label>
+                <input type="password" class="form-control" id="new-password" name="new-password" placeholder="Enter new password" required>
+            </div>
+            <div class="form-group">
+                <label for="confirm-password">Confirm Password</label>
+                <input type="password" class="form-control" id="confirm-password" name="confirm-password" placeholder="Confirm new password" required>
+            </div>
+            <div class="response"></div>
+            <button type="submit" id="submit" class="btn btn-custom btn-block">Reset Password</button>
+            <a href="/loginUser" class="back-to-login">Back to Login</a>
+    </div>
+</div>
+<%-include('footer')%>
+<script src="/javascripts/navbar.js"></script>
+
+<script src="/javascripts/reset.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
